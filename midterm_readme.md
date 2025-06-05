@@ -35,41 +35,41 @@ username: password{userId}
 
 - [x] Inputs (2pts)
 
-- [] Button to Edit (2pts)
+- [x] Button to Edit (2pts)
 
-- [] Button to Submit (2pts)
+- [x] Button to Submit (2pts)
 
-- [] Button to Delete (2pts)
+- [x] Button to Delete (2pts)
 
 - [x] CheckBox (2pts)
 
 ### 3.Naming and Structures
 
-- [] Good Naming for Components (5pts)
+- [x] Good Naming for Components (5pts)
 
-- [] Readable Code (easy to read): Good components separation(10pts)
+- [x] Readable Code (easy to read): Good components separation(10pts)
 
 ### Part-3 : Feature and Logic (95pts)
 
 - [x] Using React Router (10pts)
 
-- [] Login (Connects to API) (10pts)
+- [x] Login (Connects to API) (10pts)
 
-- [] Get my Todo (10pts)
+- [x] Get my Todo (10pts)
 
-- [] Auto Redirect when **Login Success** (10pts)
+- [x] Auto Redirect when **Login Success** (10pts)
 
-- [] Create Todo (Connects to API) (10pts)
+- [x] Create Todo (Connects to API) (10pts)
 
 - [] Can submit form with **"Enter Key"** (10pts)
 
-- [] Update Todo (Connects to API) (10pts)
+- [x] Update Todo (Connects to API) (10pts)
 
-- [] Delete Todo (Connect to API) (10pts)
+- [x] Delete Todo (Connect to API) (10pts)
 
-- [] Input checkbox could change the data (Connect to API) (10pts)
+- [x] Input checkbox could change the data (Connect to API) (10pts)
 
-- [] Good Naming for Functions (5pts)
+- [x] Good Naming for Functions (5pts)
 
 ### Part-3 : Bonus (50pts)
 
@@ -79,13 +79,13 @@ username: password{userId}
 
 - [x] UI Feature Register (5pts)
 
-- [] Register Feature Connects to API (5pts)
+- [x] Register Feature Connects to API (5pts)
 
 - [x] Using State Management (useContext, zustand) (5pts)
 
 - [] Protect Routes (10pts)
 
-- [] Having Loading mechanism (5pts)
+- [x] Having Loading mechanism (5pts)
 
 - [] Show **Created date** when create todo (5pts)
 
