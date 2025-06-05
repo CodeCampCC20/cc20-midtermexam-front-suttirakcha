@@ -7,13 +7,13 @@ import TodoForm from "../components/TodoForm";
 import Loading from "../components/Loading";
 
 function TodoPage() {
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const isAuthenticated = useAuthStore(state => state.isAuthenticated);
   const isLoading = useTodoStore(state => state.isLoading);
-  const todos = useTodoStore((state) => state.todos);
-  const getTodos = useTodoStore((state) => state.getTodos);
+  const todos = useTodoStore(state => state.todos);
+  const getTodos = useTodoStore(state => state.getTodos);
 
   useEffect(() => {
-    getTodos();
+    getTodos()
   }, [isLoading, todos]);
 
   if (!isAuthenticated) {

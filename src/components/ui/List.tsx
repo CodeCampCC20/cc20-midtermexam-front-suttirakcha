@@ -1,13 +1,12 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
-import useAuthStore from "../../stores/useAuthStore";
+import { toast } from "react-toastify";
+import Checkbox from "./Checkbox";
 import useTodoStore from "../../stores/useTodoStore";
 import type { ListProps } from "../../types/types";
-import Checkbox from "./Checkbox";
 import { ArrowRight, Pencil, X } from "lucide-react";
-import { toast } from "react-toastify";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, type ChangeEvent } from "react";
 import FormInput from "./FormInput";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   updateTaskSchema,
   type UpdateTaskFields,

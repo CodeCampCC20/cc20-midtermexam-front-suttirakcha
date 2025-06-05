@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 function TodoForm() {
   const [todoValue, setTodoValue] = useState("");
   const userId = useAuthStore((state) => state.userId);
+  const accessToken = useAuthStore(state => state.accessToken);
   const createTodo = useTodoStore((state) => state.createTodo);
   const getTodos = useTodoStore((state) => state.getTodos);
   const {
@@ -42,9 +43,9 @@ function TodoForm() {
           <FormInput
             {...register("taskName", {
               required: "Task name cannot be empty",
+              value: todoValue
             })}
             errors={errors.taskName}
-            value={todoValue}
             placeholder="New task"
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setTodoValue(e.target.value)

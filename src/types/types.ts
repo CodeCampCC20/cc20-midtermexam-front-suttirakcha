@@ -6,7 +6,7 @@ import { type UpdateTaskFields } from "../schemas/updateTaskSchema";
 
 export interface FormInputProps {
   label?: string;
-  errors?: FieldErrors<T>,
+  errors?: FieldErrors<T>;
   className?: string;
   [props: string]: any
 }
@@ -32,7 +32,6 @@ export interface Todo extends TodoFields {
 export interface TodoState {
   todos: Todo[];
   isLoading: boolean;
-  error?: string;
   createTodo: (data: TodoFields) => void;
   getTodos: () => Promise<void>;
   updateTodo: (todoId: number, { taskName, completed } : UpdateTaskFields) => void;
