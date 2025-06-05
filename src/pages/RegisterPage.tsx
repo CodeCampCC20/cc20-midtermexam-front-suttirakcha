@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import FormInput from "../components/ui/FormInput";
 import { registerSchema, type RegisterFields } from "../schemas/registerSchema";
 import useAuthStore from "../stores/useAuthStore";
@@ -12,11 +12,8 @@ const initialValues = {
 };
 
 function RegisterPage() {
-  const user = useAuthStore((state) => state.user);
-
-  if (user) {
-    return <Navigate to="/todos" />;
-  }
+  const navigate = useNavigate();
+  const registerData = useAuthStore((state) => state.register);
 
   const {
     register,
@@ -29,11 +26,9 @@ function RegisterPage() {
   });
 
   const onSubmit: SubmitHandler<RegisterFields> = (data) => {
-    const register = useAuthStore((state) => state.register);
-
     try {
-      console.log(data);
-      register(data);
+      registerData(data);
+      navigate("/login")
     } catch (err) {
       setError("root", {
         message: "An error occurred while trying to log in, please try again.",

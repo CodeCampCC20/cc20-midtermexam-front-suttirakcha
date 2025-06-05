@@ -4,6 +4,7 @@ import type { LoginFields } from "../schemas/loginSchema";
 import axios from "axios";
 import type { AuthState } from "../types/types";
 import type { RegisterFields } from "../schemas/registerSchema";
+import useTodoStore from "./useTodoStore";
 
 const useAuthStore = create<AuthState>()(
   persist(
@@ -46,15 +47,15 @@ const useAuthStore = create<AuthState>()(
               "Content-Type": "application/json",
             },
           });
-          // set(state => ({ ...state, isAuthenticated }))
+
+          console.log(response.data.message);
         } catch (err: any) {
           set(() => ({ error: err.message }));
-        } finally {
-          set(() => ({ error: "" }));
         }
       },
       logout: () => {
         set(() => ({ user: null, accessToken: "", userId: null, isAuthenticated: false }));
+        useTodoStore.setState(() => ({ todos: [] }))
       },
     }),
     {

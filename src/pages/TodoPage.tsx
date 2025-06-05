@@ -1,31 +1,28 @@
 import { Navigate } from "react-router-dom";
 import useAuthStore from "../stores/useAuthStore";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import List from "../components/ui/List";
 import useTodoStore from "../stores/useTodoStore";
 import TodoForm from "../components/TodoForm";
+import Loading from "../components/Loading";
 
 function TodoPage() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-  const [isLoading, setIsLoading] = useState(true);
+  const isLoading = useTodoStore(state => state.isLoading);
   const todos = useTodoStore((state) => state.todos);
   const getTodos = useTodoStore((state) => state.getTodos);
-  const deleteTodo = useTodoStore(state => state.deleteTodo);
 
   useEffect(() => {
-    if (todos){
-      setIsLoading(false);
-    }
     getTodos();
-  }, [isLoading, isAuthenticated, getTodos, todos]);
+  }, [isLoading, todos]);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
 
-  const content = () => {
+  const Content = () => {
     if (isLoading) {
-      return <p className="text-center text-gray-500">Loading...</p>;
+      return <Loading />;
     }
 
     return (
@@ -40,9 +37,6 @@ function TodoPage() {
                   id={todo.id}
                   key={todo.id}
                   title={todo.taskName}
-                  isChecked={todo.completed}
-                  onUpdate={() => console.log(todo.id)}
-                  onDelete={() => deleteTodo(todo.id)}
                 />
               );
             })}
@@ -59,7 +53,7 @@ function TodoPage() {
   return (
     <main className="main-sec">
       <h1 className="heading">My Todos</h1>
-      {content()}
+      <Content />
     </main>
   );
 }
