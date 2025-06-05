@@ -10,7 +10,6 @@ import { ToastContainer, toast } from "react-toastify";
 function TodoForm() {
   const [todoValue, setTodoValue] = useState("");
   const userId = useAuthStore((state) => state.userId);
-  const accessToken = useAuthStore(state => state.accessToken);
   const createTodo = useTodoStore((state) => state.createTodo);
   const getTodos = useTodoStore((state) => state.getTodos);
   const {

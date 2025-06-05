@@ -10,7 +10,7 @@ const getToken = () => {
   return token;
 }
 
-const useTodoStore = create<TodoState>()((set, get) => ({
+const useTodoStore = create<TodoState>()((set) => ({
   todos: [],
   isLoading: true,
   getTodos: async () => {
