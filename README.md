@@ -54,10 +54,12 @@ export default tseslint.config({
 ```
 
 ## Additional packages installed on this project
-- TailwindCSS
-- Lucide React
+- tailwindcss
+- lucide-react
 - zod
 - zustand
 - react-hook-form
 - react-router-dom
-- headlessUI
+- react-toastify
+- axios
+- daisyUI
